@@ -60,15 +60,15 @@ body {
 
     .arrow-down {
         position: relative;
-        top: 80px;
+        top: 10px;
         img {
             transform: rotate(180deg);
             border-radius: 10000px;
-            transition: box-shadow 0.2s ease;
+            transition: box-shadow 0.3s linear;
             height: 85px;
             width: 85px;
             &:hover, &:active {
-                box-shadow: -1px -1px 3px $primaryTextColor;
+                box-shadow: 0px 0px 3px $primaryTextColor;
             }
         }
     }
@@ -142,7 +142,7 @@ body {
             background-repeat: no-repeat;
             background-position: 50% 50%;
 
-            height: 600px;
+            height: 540px;
             width: 100%;
 
             .center {
@@ -164,10 +164,8 @@ body {
                     transform: translateY(250px);
                     transition: all 0.8s ease;
                     display: table;
-                    width: 30%;
                     height: 100%;
                     text-align: center;
-                    margin: auto;
                     div {
                         display: table-cell;
                         vertical-align: middle;
@@ -181,7 +179,7 @@ body {
             }
         }
 
-        #cv {
+        .cv {
             background: $darkPrimaryColor;
             width: 100%;
             color: $textPrimaryColor;
@@ -245,8 +243,8 @@ body {
     #logo-scroll{
         opacity: 0;
         position:fixed;
-        bottom: 50px;
-        right: 20px;
+        bottom: 5%;
+        right: 3%;
         transition: all 0.4s ease;
         box-shadow: 1px 1px 1px $secondaryTextColor;
         border-radius: 50200px;

@@ -26,25 +26,11 @@
     <main>
         <div id="about-me">
             <div class="center">
-                <!--<aside>-->
-                    <!--<h1><a href="https://github.com/Aldorus">{{i18n.public_contrib}}</a></h1>-->
-
-                    <!--<div class="content">-->
-                        <!--<div ng-if="!projects">Loading Data</div>-->
-                        <!--<div ng-repeat="project in projects">-->
-                            <!--<a href="{{project.svn_url}}"><h2>{{project.name}}</h2></a>-->
-                            <!--&lt;!&ndash;{{project | json}}&ndash;&gt;-->
-                            <!--<span>Last Update: {{ project.updated_at | date }}</span>-->
-                            <!--<p>{{project.description}}</p>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</aside>-->
-                <div class="philo">
+                <div class="philo col-md-6 col-md-offset-3">
                     <div>
-                        <h2>{{i18n.philosophie}}</h2>
+                        <h2 id="about-link">{{i18n.philosophie}}</h2>
                         <p>{{i18n.philo_text}}</p>
 
-                        <br/>
                         <a class="arrow-down" smooth-scroll target="cv" href="">
                             <img src="assets/1769.png">
                         </a>
@@ -52,8 +38,8 @@
                 </div>
             </div>
         </div>
-        <div id="cv">
-            <div class="col-md-5 resume">
+        <div class="cv">
+            <div class="col-md-5 resume" id="cv">
                 <h2>{{i18n.look_resume}}</h2>
 
                 <div class="content col-sm-12">
