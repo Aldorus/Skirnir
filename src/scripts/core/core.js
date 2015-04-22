@@ -1,9 +1,17 @@
 'use strict';
 require('../github/github');
 
-angular.module('skirnir', ['ngAnimate', 'ngTouch', 'ngSanitize', 'ui.router', 'ui.bootstrap', 'ngBabelfish', 'github', 'angularSmoothscroll'])
+angular.module('skirnir', [
+    'ngAnimate',
+    'ngTouch',
+    'ngSanitize',
+    'ui.router',
+    'github',
+    'smoothScroll',
+    'ngMaterial',
+    'pascalprecht.translate'])
     .controller('MainCtrl', require('./controllers/MainCtrl'))
-    .config(function ($stateProvider, $urlRouterProvider, babelfishProvider, githubProvider) {
+    .config(function ($stateProvider, $urlRouterProvider, githubProvider, $translateProvider) {
         /**
          * Angular application configuration
          */
@@ -16,20 +24,15 @@ angular.module('skirnir', ['ngAnimate', 'ngTouch', 'ngSanitize', 'ui.router', 'u
 
         $urlRouterProvider.otherwise('/');
 
-        /**
-         * The provider the the translator module (we use here babelfish)
-         */
-        babelfishProvider.init({
-            state: 'home',
-            lang: 'en-EN',
-            url: 'i18n/languages.json',
-            namespace: 'i18n',
-            lazy: false
-        });
-
         githubProvider.init({
             userName: 'Aldorus'
         });
+
+        $translateProvider.useStaticFilesLoader({
+            prefix: 'i18n/',
+            suffix: '.json'
+        });
+        $translateProvider.preferredLanguage('en');
     })
 ;
 
