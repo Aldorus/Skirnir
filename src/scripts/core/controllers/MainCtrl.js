@@ -2,76 +2,93 @@
 /*@ngInject*/
 module.exports = function () {
 
-    var logo = $('#logo-scroll');
-    var homeLink = $('#home-link');
-    var aboutMeLink = $('#about-me-link');
-    var CVLink = $('#cv-link');
+    var width, height;
 
-    var home = $('#top');
-    var aboutMe = $('#about-me');
-    var cv = $('#cv');
-    var menu = $('#menu');
-    var background = $('#background');
+    var aboutMe = $('.about-me');
+    var projects = $('.projects');
+    var contacts = $('.contacts');
+
+    var page = $('body');
+    
+    $(document).mousewheel(function(event, delta){
+        if (delta < 0) {
+            page.scrollTop(page.scrollTop() + 65);
+        } else if (delta > 0) {
+            page.scrollTop(page.scrollTop() - 65);
+        }
+        return false;
+    });
 
     $(document).scroll(function () {
+        var scroll = $(this).scrollTop();
 
-        // Menu fixing
-        var fixed = false;
-        if(!fixed && $(this).scrollTop() > menu.position().top) {
-            fixed = true;
-            menu.css({
-                position: 'fixed',
-                top: '0',
-                bottom: 'initial'
+        if(scroll < height + 250) {
 
+            //Phase 1
+
+            var pV = height - scroll;
+            if(pV < 0) {
+                pV = 0;
+            }
+            projects.css({
+                webkitTransform:'translate3d(0, '+pV+'px, 0)'
             });
-            menu.addClass('fixed');
-        }
-        if(fixed && $(this).scrollTop() < (window.innerHeight - menu.height())) {
-            fixed = false;
-            menu.css({
-                position: 'absolute',
-                bottom: '0',
-                top: 'initial'
+            aboutMe.css({
+                webkitTransform:'translate3d(0, -'+scroll/2+'px, 0)'
             });
-            menu.removeClass('fixed');
-        }
 
-        // Background header parallax
-        if(!fixed) {
-            var opacity = $(this).scrollTop() / background.height() + 0.4;
-            menu.css({
-                'backgroundColor': 'rgba(0,0,0,'+ opacity +')'
+        }
+        if(scroll > height + 100) {
+
+            //Phase 2
+
+            var pV = width - (scroll - height + 100) + (width-height) ;
+            console.log(width);
+            if(pV < 0) {
+                pV = 0;
+            }
+            contacts.css({
+                webkitTransform:'translate3d('+pV+'px, 0, 0)'
             });
         }
 
-        logo.css({opacity: $(this).scrollTop() > 300 ? 1 : 0});
+        if(scroll < height*3) {
 
-        if ($(this).scrollTop() < home.height()) {
-            homeLink.addClass('selected');
-            aboutMeLink.removeClass('selected');
-            CVLink.removeClass('selected');
+            //Phase 3
+            console.log('Slide start3');
 
-            $('.philo').css({opacity: 0 });
 
-            $('.philo').css({transform: 'translateY(250px)' });
-        } else if ($(this).scrollTop() >= home.height() && $(this).scrollTop() < aboutMe.position().top + aboutMe.height()) {
-            homeLink.removeClass('selected');
-            aboutMeLink.addClass('selected');
-            CVLink.removeClass('selected');
+        }
 
-            $('.philo').css({opacity: 1 });
+        if(scroll < height*4) {
 
-            $('.philo').css({transform: 'translateY(0)' });
-        } else if ($(this).scrollTop() > aboutMe.position().top + aboutMe.height()) {
-            homeLink.removeClass('selected');
-            aboutMeLink.removeClass('selected');
-            CVLink.addClass('selected');
+            //Phase 4
+            console.log('Slide start4');
+
+
         }
     });
 
     $(document).ready(function () {
+
         $('body').addClass('ready');
+        // With this lines you correct the android keyboard comportment for the formEnd
+        height = window.innerHeight;
+        width = window.innerWidth;
+        document.getElementsByTagName('body')[0].style.height = height + 'px';
+        document.getElementsByTagName('html')[0].style.height = height + 'px';
+
+        // init transformation
+        projects.css({
+            webkitTransform:'translate3d(0, '+height+'px, 0)'
+        });
+        contacts.css({
+            webkitTransform:'translate3d('+width+'px, 0, 0)'
+        });
+    });
+
+    $(window).on('beforeunload', function(){
+        $(window).scrollTop(0);
     });
 
 

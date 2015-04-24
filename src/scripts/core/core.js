@@ -33,6 +33,7 @@ angular.module('skirnir', [
             suffix: '.json'
         });
         $translateProvider.preferredLanguage('en');
+
     })
 ;
 

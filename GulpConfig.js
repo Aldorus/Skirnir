@@ -20,7 +20,7 @@ var appName = "skirnir";
  * The default port where the application is launched
  * @type {number}
  */
-var defaultPort = 8081;
+var defaultPort = 8080;
 
 module.exports = {
     dist: dist,
