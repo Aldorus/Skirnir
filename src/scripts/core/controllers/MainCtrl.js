@@ -41,14 +41,23 @@ module.exports = function () {
         if(scroll > height + 100) {
 
             //Phase 2
+            var baseScroll = scroll - (height + 100);
+            console.log("base scroll", baseScroll);
 
-            var pV = width - (scroll - height + 100) + (width-height) ;
-            console.log(width);
+            //Calc percentage
+            var percentage = baseScroll / height;
+            console.log(percentage);
+
+            var pV = width - (width*percentage);
             if(pV < 0) {
                 pV = 0;
             }
             contacts.css({
                 webkitTransform:'translate3d('+pV+'px, 0, 0)'
+            });
+        } else {
+            contacts.css({
+                webkitTransform:'translate3d('+width+'px, 0, 0)'
             });
         }
 
