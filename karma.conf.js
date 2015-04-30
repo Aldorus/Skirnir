@@ -3,8 +3,12 @@ module.exports = function(config) {
 
     // Load the vendors files
     var files = [];
-    for(var i = 0; i<configFile.jsVendors.length; i++){
-        files.push(__dirname + '/src/' + configFile.jsVendors[i]);
+    var wiredep = require('./Kiwapp_GulpFile/node_modules/wiredep')({
+        bowerJson: require('./bower.json'),
+        directory: "../src/vendor"
+    });
+    for(var i = 0; i<wiredep.js.length; i++){
+        files.push(__dirname + '/src/' + wiredep.js[i]);
     }
     // Load the angular mock for jasmine
     files.push(__dirname + '/src/vendor/angular-mocks/angular-mocks.js');

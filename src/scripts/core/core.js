@@ -8,10 +8,9 @@ angular.module('skirnir', [
     'ui.router',
     'github',
     'smoothScroll',
-    'ngMaterial',
-    'pascalprecht.translate'])
+    'ngMaterial'])
     .controller('MainCtrl', require('./controllers/MainCtrl'))
-    .config(function ($stateProvider, $urlRouterProvider, githubProvider, $translateProvider) {
+    .config(function ($stateProvider, $urlRouterProvider, githubProvider) {
         /**
          * Angular application configuration
          */
@@ -27,13 +26,6 @@ angular.module('skirnir', [
         githubProvider.init({
             userName: 'Aldorus'
         });
-
-        $translateProvider.useStaticFilesLoader({
-            prefix: 'i18n/',
-            suffix: '.json'
-        });
-        $translateProvider.preferredLanguage('en');
-
     })
 ;
 
