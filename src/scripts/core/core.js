@@ -7,9 +7,13 @@ angular.module('skirnir', [
     'ngSanitize',
     'ui.router',
     'github',
-    'smoothScroll',
-    'ngMaterial'])
+    'smoothScroll'])
     .controller('MainCtrl', require('./controllers/MainCtrl'))
+    .directive('glueMenu', require('./directives/glueMenu'))
+    .directive('homeScreen', require('./directives/homeScreen'))
+    .directive('projects', require('./directives/projects'))
+    .directive('contacts', require('./directives/contacts'))
+    .directive('skills', require('./directives/skills'))
     .config(function ($stateProvider, $urlRouterProvider, githubProvider) {
         /**
          * Angular application configuration
@@ -18,7 +22,12 @@ angular.module('skirnir', [
             .state('home', {
                 url: '/',
                 templateUrl: 'core/partials/main.html',
-                controller: 'MainCtrl'
+                controller: 'MainCtrl',
+                resolve: {
+                    github: function(GithubService) {
+                        return GithubService.call();
+                    }
+                }
             });
 
         $urlRouterProvider.otherwise('/');

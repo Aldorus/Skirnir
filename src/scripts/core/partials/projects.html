@@ -1,0 +1,8 @@
+<div class="slide projects full-screen" id="projects">
+    <h1>Projects</h1>
+
+    <a class="bloc-item" ng-repeat="project in projects track by $index" href="{{project.html_url}}">
+        <span class="title">{{project.name}}</span><span class="desc">{{project.description}}</span>
+    </a>
+
+</div>

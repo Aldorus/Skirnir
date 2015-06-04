@@ -1,0 +1,65 @@
+@import "colors";
+
+#projects {
+    background-image: url('../assets/city-731296_1280.jpg');
+    padding: 40px;
+
+    h1 {
+        color: white;
+        font-size: 6vmin;
+        margin-bottom: 20px;
+        padding-top: 90px;
+    }
+
+    .bloc-item {
+        float: left;
+        width: 19%;
+        height: 23%;
+        margin: 0.5%;
+        text-decoration: none;
+        background: white;
+        color: $colorProjects;
+        display: table;
+        vertical-align: middle;
+        overflow: hidden;
+        padding: 0;
+
+        .title {
+            display: table-cell;
+            margin: 0;
+            width: 50%;
+            float: left;
+            overflow: hidden;
+        }
+
+        .desc {
+            margin: 0;
+            width: 0%;
+            height: 100%;
+            float: left;
+            display: block;
+            overflow: hidden;
+            background: $colorProjects;
+            color: white;
+            transition: all 0.2s ease;
+        }
+
+        &:nth-child(5n-3) {
+            margin-left: 0%;
+//            border-color: red;
+        }
+
+        &:nth-child(5n+1) {
+            margin-right: 0%;
+//            border-color: blue;
+        }
+
+        &:hover {
+
+            .desc {
+                width: 50%;
+            }
+
+        }
+    }
+}

@@ -1,23 +1,16 @@
-<div class="container" id="top">
+<div class="container full-screen" id="top">
     <header>
-        <ul class="menu">
-            <li class="menu-top selected"><a href="#" scroll-to="top">Home</a></li>
-            <li class="menu-projects"><a href="#" scroll-to="projects">Projects</a></li>
-            <li class="menu-contacts"><a href="#" scroll-to="contacts">Contacts</a></li>
-        </ul>
+        <glue-menu
+                selected-elements="selectedElements">
+        </glue-menu>
     </header>
-    <div class="slide about-me">
-        Guillaume Roussel<br/>
-        Web and mobile developper
-    </div>
-    <div class="slide projects">
-        Projects
-    </div>
-    <div class="slide contacts">
-        Contacts
-    </div>
 
-    <div class="slideH" id="projects"></div>
-    <div class="slideH" id="contacts"></div>
+    <section class="full-screen">
+        <home-screen></home-screen>
+        <projects
+                projects="githubProjects"></projects>
+        <skills></skills>
+        <contacts></contacts>
+    </section>
 </div>
 
