@@ -4,37 +4,34 @@
     background-image: url('../assets/city-731296_1280.jpg');
     padding: 40px;
 
-    h1 {
-        color: white;
-        font-size: 6vmin;
-        margin-bottom: 20px;
-        padding-top: 90px;
-    }
-
     .bloc-item {
         float: left;
         width: 19%;
         height: 23%;
         margin: 0.5%;
         text-decoration: none;
-        background: white;
+        background: url('../assets/370973576_9c1c871c39_z.jpg');
         color: $colorProjects;
         display: table;
         vertical-align: middle;
         overflow: hidden;
         padding: 0;
+        position: relative;
 
         .title {
             display: table-cell;
             margin: 0;
-            width: 50%;
+            width: 100%;
             float: left;
             overflow: hidden;
         }
 
         .desc {
+            position: absolute;
+            top: 0;
+            left: 0;
             margin: 0;
-            width: 0%;
+            width: 80%;
             height: 100%;
             float: left;
             display: block;
@@ -42,6 +39,7 @@
             background: $colorProjects;
             color: white;
             transition: all 0.2s ease;
+            transform: translate3d(130%, 0, 0);
         }
 
         &:nth-child(5n-3) {
@@ -57,7 +55,7 @@
         &:hover {
 
             .desc {
-                width: 50%;
+                transform: translate3d(25%, 0, 0);
             }
 
         }

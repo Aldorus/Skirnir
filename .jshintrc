@@ -23,6 +23,7 @@
         "angular": false,
         "$": false,
         "document": false,
-        "window": false
+        "window": false,
+        "d3": false
     }
 }

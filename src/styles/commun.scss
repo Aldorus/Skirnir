@@ -98,6 +98,9 @@ h1 {
         font-size: 6vmin;
         margin-bottom: 20px;
         padding-top: 100px;
+        @media screen and (max-width: $smallBreak) {
+            padding-top: 00px;
+        }
     }
 }
 

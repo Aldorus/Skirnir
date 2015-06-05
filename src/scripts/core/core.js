@@ -1,5 +1,6 @@
 'use strict';
 require('../github/github');
+require('../chart/chart');
 
 angular.module('skirnir', [
     'ngAnimate',
@@ -7,6 +8,7 @@ angular.module('skirnir', [
     'ngSanitize',
     'ui.router',
     'github',
+    'chart',
     'smoothScroll'])
     .controller('MainCtrl', require('./controllers/MainCtrl'))
     .directive('glueMenu', require('./directives/glueMenu'))

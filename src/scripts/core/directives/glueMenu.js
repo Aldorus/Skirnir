@@ -14,7 +14,7 @@ module.exports = function() {
                 currentSelected: 0
             };
 
-            window.onscroll = function(value) {
+            window.addEventListener('scroll', function(value) {
                 var scrollValue = value.currentTarget.scrollY;
                 var glue = document.getElementById('glue-menu');
 
@@ -32,7 +32,7 @@ module.exports = function() {
                 // Use apply when you are in a callback
                 $scope.$apply();
 
-            };
+            });
         }
     };
 };
