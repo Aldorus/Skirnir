@@ -17,14 +17,12 @@ module.exports = function () {
             $scope.middleWidth = chartTrigger.offsetWidth/2;
 
 
-            function drawBarCircleChart(data, target, values, labels) {
+            function drawBarCircleChart(data, target) {
                 var size = data[0].value * 1.15,
                     radius = chartTrigger.offsetHeight / 2.20,
                     sectorWidth = 0.1,
                     radScale = 25,
-                    sectorScale = 1.20,
-                    valueText = d3.select(values),
-                    labelText = d3.select(labels);
+                    sectorScale = 1.20;
                 target = d3.select(target);
 
                 var arc = d3.svg.arc()
