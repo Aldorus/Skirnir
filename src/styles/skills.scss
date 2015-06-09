@@ -1,4 +1,4 @@
-@import "colors";
+@import "values";
 
 $bottom: 150px;
 $skillWidth: 6%;
@@ -85,6 +85,10 @@ $skillWidth: 6%;
     }
 
     .category {
+        @media screen and (max-width: $smallBreak) {
+            visibility: hidden;
+        }
+
         position: absolute;
         bottom: 90px;
         left: 25%;

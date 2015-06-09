@@ -1,5 +1,15 @@
-@import 'colors';
+@import 'values';
 
+.glue-menu-container {
+    h1 {
+        position: fixed;
+        color: white;
+        z-index: 99999;
+        font-size: 6vmin;
+        top: 35px;
+        left: 40px;
+    }
+}
 .glue-menu {
     @media screen and (max-width: $smallBreak) {
         display: none;
@@ -8,10 +18,10 @@
     position: absolute;
     bottom: 0;
     z-index: 1000;
-    height: 120px;
+    height: $menuHeight;
     background-color: $colorMenu;
     width: 100%;
-    text-align: center;
+    text-align: right;
 
     &.fixed {
         position: fixed;

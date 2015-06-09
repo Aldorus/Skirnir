@@ -1,4 +1,4 @@
-@import 'colors';
+@import 'values';
 
 @font-face {
     font-family: 'Merriweather';
@@ -91,17 +91,11 @@ h1 {
     background-position: 50%;
     background-repeat: no-repeat;
     overflow: hidden;
-    padding: 40px;
 
-    h1 {
-        color: white;
-        font-size: 6vmin;
-        margin-bottom: 20px;
-        padding-top: 100px;
-        @media screen and (max-width: $smallBreak) {
-            padding-top: 00px;
-        }
+    @media screen and (max-width: $smallBreak) {
+        padding: 0px;
     }
+
 }
 
 

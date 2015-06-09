@@ -1,32 +1,31 @@
-@import "colors";
+@import "values";
 
 #projects {
-    background-image: url('../assets/city-731296_1280.jpg');
-    padding: 40px;
+//    background-image: url('../assets/city-731296_1280.jpg');
     position: relative;
 
     .list-project {
         position: absolute;
-        top: 220px;
-        left: 40px;
-        bottom: 60px;
-        right: 40px;
-        margin: -0.5%;
+        top: $menuHeight;
+        left: 00px;
+        bottom: 00px;
+        right: 00px;
+        padding: 40px;
+        margin: -1%;
 
         .bloc-item {
             float: left;
-            width: 24%;
-            margin: 0.5%;
-            height: 50%;
+            width: 23%;
+            height: 47%;
+            margin: 1%;
             text-decoration: none;
             background-size: cover;
             background-position: center;
-            border: 5px solid $colorProjects;
             position: relative;
             transition: all 0.5s ease;
 
             @media screen and (max-width: $mediumBreak) {
-                width: 49%;
+                width: 48%;
                 &:nth-child(n + 5) {
                     display: none;
                 }
