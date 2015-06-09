@@ -1,6 +1,6 @@
 'use strict';
 /*@ngInject*/
-module.exports = function ($scope, github) {
+module.exports = function ($scope) {
 
     $scope.selectedElements = [
         {
@@ -16,11 +16,8 @@ module.exports = function ($scope, github) {
             link: 'skills'
         },
         {
-            label: 'Contacts',
-            link: 'contacts'
+            label: 'Contact',
+            link: 'contact'
         }
     ];
-
-    // Github controller
-    $scope.githubProjects = github.data;
 };

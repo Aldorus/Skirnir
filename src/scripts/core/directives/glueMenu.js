@@ -1,5 +1,5 @@
 'use strict';
-
+/*@ngInject*/
 module.exports = function() {
     return {
         restrict: 'E',
@@ -8,7 +8,7 @@ module.exports = function() {
             selectedElements: '='
         },
         templateUrl: 'core/partials/glueMenu.html',
-        /*@ngInject*/
+
         controller: function($scope) {
             $scope.model = {
                 currentSelected: 0

@@ -8,14 +8,28 @@ module.exports = function() {
         link: function (scope) {
 
             scope.valueSkills = [
-                {'index': 0.3, 'value': 95, 'fill': '#5F8500', 'label': 'CSS (CSS3)'},
-                {'index': 0.4, 'value': 90, 'fill': '#678E07', 'label': 'AngularJS'},
-                {'index': 0.5, 'value': 85, 'fill': '#83AE1A', 'label': 'Android'},
-                {'index': 0.6, 'value': 80, 'fill': '#A0CA39', 'label': 'API'},
-                {'index': 0.7, 'value': 80, 'fill': '#C8F25F', 'label': 'PHP'},
-                {'index': 0.8, 'value': 80, 'fill': '#B5E936', 'label': 'Gulp'},
-                {'index': 0.9, 'value': 75, 'fill': '#C1E562', 'label': 'Industrialisation'},
-                {'index': 1.0, 'value': 70, 'fill': '#9CD60A', 'label': 'MySQL'}
+
+                // Front
+                {value: 95, fill: '#0090FF', text:'#FFFFFF', label: 'CSS (CSS3)', hideValue: true},
+                {value: 95, fill: '#0090FF', text:'#FFFFFF', label: 'Web semantic', hideValue: true},
+                {value: 75, fill: '#0090FF', text:'#FFFFFF', label: 'Unit testing', hideValue: true},
+                {value: 85, fill: '#0090FF', text:'#FFFFFF', label: 'AngularJS', hideValue: true},
+                {value: 90, fill: '#0090FF', text:'#FFFFFF', label: 'Javascript', hideValue: true},
+
+                // Mobile
+                {value: 90, fill: '#0CE87D', text:'#FFFFFF', label: 'Android', hideValue: true},
+                {value: 80, fill: '#0CE87D', text:'#FFFFFF', label: 'API', hideValue: true},
+                {value: 85, fill: '#0CE87D', text:'#FFFFFF', label: 'Responsive', hideValue: true},
+
+                // Server
+                {value: 90, fill: '#E8B800', text:'#FFFFFF', label: 'PHP', hideValue: true},
+                {value: 85, fill: '#E8B800', text:'#FFFFFF', label: 'JAVA/J2EE', hideValue: true},
+
+                // Lead developing
+                {value: 85, fill: '#FF6D0D', text:'#FFFFFF', label: 'Git', hideValue: true},
+                {value: 95, fill: '#FF6D0D', text:'#FFFFFF', label: 'Gulp', hideValue: true},
+                {value: 65, fill: '#FF6D0D', text:'#FFFFFF', label: 'C. Integration', hideValue: true},
+                {value: 55, fill: '#FF6D0D', text:'#FFFFFF', label: 'Management', hideValue: true}
 
             ];
         }

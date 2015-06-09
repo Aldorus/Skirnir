@@ -14,7 +14,7 @@ angular.module('skirnir', [
     .directive('glueMenu', require('./directives/glueMenu'))
     .directive('homeScreen', require('./directives/homeScreen'))
     .directive('projects', require('./directives/projects'))
-    .directive('contacts', require('./directives/contacts'))
+    .directive('contact', require('./directives/contact'))
     .directive('skills', require('./directives/skills'))
     .config(function ($stateProvider, $urlRouterProvider, githubProvider) {
         /**
@@ -24,12 +24,7 @@ angular.module('skirnir', [
             .state('home', {
                 url: '/',
                 templateUrl: 'core/partials/main.html',
-                controller: 'MainCtrl',
-                resolve: {
-                    github: function(GithubService) {
-                        return GithubService.call();
-                    }
-                }
+                controller: 'MainCtrl'
             });
 
         $urlRouterProvider.otherwise('/');
