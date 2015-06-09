@@ -1,18 +1,17 @@
 @import 'values';
 
-.glue-menu-container {
+.glue-menu {
+    @media screen and (max-width: $smallBreak) {
+        display: none;
+    }
+
     h1 {
-        position: fixed;
+        position: absolute;
         color: white;
         z-index: 99999;
         font-size: 6vmin;
         top: 35px;
         left: 40px;
-    }
-}
-.glue-menu {
-    @media screen and (max-width: $smallBreak) {
-        display: none;
     }
 
     position: absolute;
@@ -22,10 +21,12 @@
     background-color: $colorMenu;
     width: 100%;
     text-align: right;
+    transition: all 0.2s ease;
 
     &.fixed {
         position: fixed;
         top: 0;
+        background-color: black;
     }
 
     li {

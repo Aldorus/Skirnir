@@ -1,7 +1,7 @@
 @import "values";
 
 #projects {
-//    background-image: url('../assets/city-731296_1280.jpg');
+    background-image: url('../assets/city-731296_1280.jpg');
     position: relative;
 
     .list-project {
@@ -20,9 +20,10 @@
             margin: 1%;
             text-decoration: none;
             background-size: cover;
-            background-position: center;
+            background-position: 50% 40%;
             position: relative;
             transition: all 0.5s ease;
+            overflow: hidden;
 
             @media screen and (max-width: $mediumBreak) {
                 width: 48%;
@@ -38,10 +39,31 @@
                 }
             }
 
-            &:hover {
-                border: 5px solid blue;
-
+            .title {
+                color: white;
+                height: 100%;
+                width: 100%;
+                background: $colorProjects;
+                font-size: 3.0vmin;
+                position: absolute;
+                bottom: 0;
+                display: flex;
+                align-items: flex-end;
+                text-align: left;
+                padding: 10px;
+                transform: translate(100%, 0);
+                transition: all 0.5s ease;
             }
+
+
+
+            &:hover {
+                background-position: 70%;
+                .title {
+                    transform: translate(0, 0);
+                }
+            }
+
         }
     }
 }

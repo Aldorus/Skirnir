@@ -1,8 +1,7 @@
-<div class="glue-menu-container">
+<div class="glue-menu" id="glue-menu">
     <h1 ng-show="model.currentSelected!==0">{{selectedElements[model.currentSelected].label}}</h1>
 
-    <ul class="glue-menu" id="glue-menu">
-
+    <ul>
         <li class="menu-top" ng-class="{'selected': $index===model.currentSelected}"
             ng-repeat="selectedElement in selectedElements track by $index">
             <a href="#" scroll-to="{{selectedElement.link}}">{{selectedElement.label}}</a>
