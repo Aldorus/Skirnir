@@ -3,7 +3,6 @@ require('../github/github');
 require('../chart/chart');
 
 angular.module('skirnir', [
-    'ngAnimate',
     'ngTouch',
     'ngSanitize',
     'ui.router',

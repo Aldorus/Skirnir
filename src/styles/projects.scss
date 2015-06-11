@@ -1,29 +1,36 @@
 @import "values";
 
 #projects {
-    background-image: url('../assets/city-731296_1280.jpg');
     position: relative;
+    top: -$menuHeight;
+    overflow: visible;
 
     .list-project {
         position: absolute;
         top: $menuHeight;
-        left: 00px;
-        bottom: 00px;
-        right: 00px;
-        padding: 40px;
-        margin: -1%;
+        left: 0px;
+        bottom: -$menuHeight;
+        right: 0px;
+//        background-image: linear-gradient(to bottom, $colorSkills 0%, $colorSkills 100%), url('../assets/backgroundProjects.png');
+//        background-size: 100% 100%;
+//        background-repeat: repeat-y;
+
+        padding: 10px 40px 50px 40px;
 
         .bloc-item {
             float: left;
-            width: 23%;
-            height: 47%;
+            width: 31%;
+            height: 31%;
             margin: 1%;
             text-decoration: none;
             background-size: cover;
-            background-position: 50% 40%;
+            background-position: 50%;
             position: relative;
             transition: all 0.5s ease;
             overflow: hidden;
+            border: 5px solid white;
+            box-shadow: 2px 2px 5px black;
+
 
             @media screen and (max-width: $mediumBreak) {
                 width: 48%;
@@ -39,28 +46,53 @@
                 }
             }
 
-            .title {
+            .inner-item {
                 color: white;
                 height: 100%;
                 width: 100%;
+                opacity: 0;
                 background: $colorProjects;
-                font-size: 3.0vmin;
+                font-size: 2.5vmin;
                 position: absolute;
                 bottom: 0;
-                display: flex;
-                align-items: flex-end;
-                text-align: left;
-                padding: 10px;
-                transform: translate(100%, 0);
+                right: 0;
                 transition: all 0.5s ease;
+                text-align: center;
+
+                .title {
+                    display: inline-block;
+                    width: 100%;
+                    background: #FFFFFF;
+                    color: #000000;
+                    padding: 10px;
+                    margin-top: 15px;
+                    font-weight: bold;
+
+                    transform: translate(0px, -150px);
+                    transition: all 0.5s ease;
+                }
+                .desc {
+                    display: inline-block;
+                    font-size: 2.0vmin;
+                    padding: 15px;
+                    font-style: italic;
+                    transform: translate(0px, 200px);
+                    transition: all 0.5s ease;
+                    transition-delay: 0.2s;
+                }
             }
 
-
-
             &:hover {
-                background-position: 70%;
-                .title {
-                    transform: translate(0, 0);
+                transform: scale(1.05);
+                .inner-item {
+                    opacity: 1;
+
+                    .title {
+                        transform: translate(0px, 0px);
+                    }
+                    .desc {
+                        transform: translate(0px, 0px);
+                    }
                 }
             }
 
