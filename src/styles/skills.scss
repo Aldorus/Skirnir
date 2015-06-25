@@ -6,6 +6,9 @@ $skillWidth: 6%;
 #skills {
     height: 100%;
     background-image: linear-gradient(to bottom, $colorSkills 0%, $colorSkills 100%), url('../assets/pier-407252_1280.jpg');
+    @media screen and (max-width: $smallBreak) {
+        background-image: linear-gradient(to bottom, $colorSkills 0%, $colorSkills 100%);
+    }
     position: relative;
 
     .chart {
@@ -63,6 +66,10 @@ $skillWidth: 6%;
             border-top: 1px solid white;
             width: 100%;
             color: white;
+            @media screen and (max-width: $smallBreak) {
+                border-color: #0090FF;
+                color: #0090FF;
+            }
         }
         .awesome {
             top: 0%;
@@ -85,7 +92,7 @@ $skillWidth: 6%;
     }
 
     .category {
-        @media screen and (max-width: $smallBreak) {
+        @media screen and (max-width: $mediumBreak) {
             visibility: hidden;
         }
 

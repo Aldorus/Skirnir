@@ -1,4 +1,4 @@
-@import 'values';
+@import "values";
 
 .glue-menu {
     @media screen and (max-width: $smallBreak) {
@@ -19,13 +19,15 @@
             opacity: 1;
         }
         &.menu-1 {
-            color: $colorProjectsMenu;
-        }
-        &.menu-2 {
+//            color: $colorProjectsMenu;
             color: $colorSkillsMenu;
         }
-        &.menu-3 {
+        &.menu-2 {
+//            color: $colorSkillsMenu;
             color: $colorContactsMenu;
+        }
+        &.menu-3 {
+//            color: $colorContactsMenu;
         }
     }
 

@@ -3,9 +3,7 @@ module.exports = function() {
     return {
         restrict: 'E',
         replace: true,
-        scope: {
-            projects: '='
-        },
+        scope: {},
         templateUrl: 'core/partials/projects.html',
         link: function () {
 

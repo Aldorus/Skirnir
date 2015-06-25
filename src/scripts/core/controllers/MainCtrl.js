@@ -8,10 +8,6 @@ module.exports = function ($scope) {
             link: 'top'
         },
         {
-            label: 'Projects',
-            link: 'projects'
-        },
-        {
             label: 'Skills',
             link: 'skills'
         },
