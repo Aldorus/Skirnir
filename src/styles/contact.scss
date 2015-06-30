@@ -3,9 +3,14 @@
 #contact {
     height: 100%;
     background-image: linear-gradient(to bottom, $colorContacts 0%, $colorContacts 100%), url('../assets/technology-785742_1280.jpg');
+
     @media screen and (max-width: $smallBreak) {
-        background-image: linear-gradient(to bottom, $colorContacts 0%, $colorContacts 100%);
+        background-image: none;
+        position: absolute;
+        bottom: 0.5%;
+        height: auto;
     }
+
     padding-top: 120px;
     display: flex;
     justify-content: center;
@@ -28,15 +33,23 @@
         align-items: center;
         justify-content: center;
 
+        @media screen and (max-width: $smallBreak) {
+            margin: 5px;
+            position: relative;
+            height: 100px;
+            width: 24%;
+        }
         svg {
             width: 50%;
             height: 50%;
-            fill:  rgba(232, 184, 0, 0.7);
+            fill:  $colorContactsMenu;
+            @media screen and (max-width: $smallBreak) {
+                fill:  $colorHome;
+            }
         }
 
         &:hover {
             background-color: rgba(255,255,255, 0.85);
-
         }
     }
 }

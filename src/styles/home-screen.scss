@@ -2,6 +2,9 @@
 
 .about-me {
     background-image: url('../assets/1417903_25055855.jpg');
+    @media screen and (max-width: $smallBreak) {
+        background-image: linear-gradient(to bottom, $colorHome 0%, $colorHome 100%);
+    }
     overflow: hidden;
     color: white;
     padding: 0;
@@ -17,7 +20,9 @@
         background: $colorHome;
 
         @media screen and (max-width: $smallBreak) {
-            width: 90%;
+            width: 92%;
+            margin: 10% 4%;
+            padding: 0;
         }
 
         h1 {
