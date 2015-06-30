@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     config = require('../GulpConfig'),
     autoprefixer = require('gulp-autoprefixer'),
+    minifyCss = require('gulp-minify-css'),
     clip = require('gulp-clip-empty-files');
 
 /**
@@ -27,6 +28,7 @@ module.exports = function () {
             includePaths: gutil.env.template ? [gutil.env.template+"/styles/"] : null
         }))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
+        .pipe(gutil.env.type === 'production' ? minifyCss() : gutil.noop())
         .pipe(concat('main.css'))
         .pipe(gulp.dest(config.dist + 'styles/'))
         .pipe(gutil.env.opt === 'watch' ? connect.reload({stream:true}) : gutil.noop());

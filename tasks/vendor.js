@@ -1,8 +1,11 @@
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
     streamqueue = require('streamqueue'),
+    uglify = require('gulp-uglify'),
     config = require('../GulpConfig'),
-    wiredep = require('wiredep');
+    wiredep = require('wiredep'),
+    minifyCss = require('gulp-minify-css'),
+    gutil = require('gulp-util');
 
 /**
  * Concat your dependencies (js or css)
@@ -22,6 +25,8 @@ module.exports = function () {
         stream.queue(
             // The css dependencies
             gulp.src(wiredepElements.css)
+                .pipe(gutil.env.type === 'production' ? minifyCss() : gutil.noop())
+                .pipe(concat('vendor.css'))
                 .pipe(gulp.dest(config.dist + 'styles'))
         );
     }
@@ -29,6 +34,9 @@ module.exports = function () {
         stream.queue(
             // The js dependencies
             gulp.src(wiredepElements.js)
+                .pipe(gutil.env.type === 'production' ? uglify({
+                    mangle: false
+                }) : gutil.noop())
                 .pipe(concat('vendor.min.js', {newLine: ';\n'}))
                 .pipe(gulp.dest(config.dist + 'js'))
         );

@@ -4,9 +4,6 @@ module.exports = function() {
         restrict: 'E',
         replace: true,
         scope: true,
-        templateUrl: 'core/partials/homeScreen.html',
-        link: function () {
-
-        }
+        templateUrl: 'core/partials/homeScreen.html'
     };
 };

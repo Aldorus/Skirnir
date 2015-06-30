@@ -27,6 +27,8 @@ gulp.task('assets', require('./tasks/assets'));
 // Build your i18n files
 gulp.task('i18n', require('./tasks/i18n'));
 
+gulp.task('upload', require('./tasks/upload'));
+
 // Set the env config to production
 gulp.task('envProd', function () {
     gutil.env.type = 'production';
