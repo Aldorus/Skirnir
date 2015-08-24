@@ -1,4 +1,4 @@
-@import 'colors';
+@import 'values';
 
 @font-face {
     font-family: 'Merriweather';
@@ -24,231 +24,78 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
-body {
+/**
+ * Trans style in all the application
+ */
+
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    // ROOT FONT SIZE
+    font-size: 14px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    margin: 0;
+}
+
+body{
     // Set the background webview to white (Kiwapp requirement)
     background: white;
     margin: 0;
-    font-size: 14px;
-    font-family: 'Nunito', sans-serif;
-    opacity: 0;
-    transition: opacity 0.2s ease;
+    padding: 0;
 }
 
-.ready {
-    opacity: 1;
+a {
+    background-color: transparent;
+}
+a:active,
+a:hover {
+    outline: 0;
 }
 
 * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-// The wrapper for all the contents, position absolute top, left, right, bottom 0 will put this div in full screen mode
-.wrapper {
+h1 {
+    margin: 0;
+}
+
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#wrapper {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
     bottom: 0;
+    right: 0;
 }
 
-.container {
-    width: 100%;
+.full-screen {
+    display: block;
     height: 100%;
-    margin: 0;
-    padding: 0;
+    width: 100%;
+}
 
-    .arrow-down {
-        position: relative;
-        top: 10px;
-        img {
-            transform: rotate(180deg);
-            border-radius: 10000px;
-            transition: box-shadow 0.3s linear;
-            height: 85px;
-            width: 85px;
-            &:hover, &:active {
-                box-shadow: 0px 0px 3px $primaryTextColor;
-            }
-        }
+.slide {
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+    @media screen and (max-width: $smallBreak) {
+        padding: 0px;
     }
 
-    header {
-        background-color: $darkPrimaryColor;
-        width: 100%;
-        height: 100%;
-        color: $textPrimaryColor;
-        display: table;
-
-        ul {
-            width: 100%;
-            height: 80px;
-            position: fixed;
-            background-color: $darkPrimaryColor;
-            text-align: right;
-            z-index: 10000;
-
-            li {
-                list-style-type: none;
-                display: inline-block;
-
-                a {
-                    color: $textPrimaryColor;
-                    height: 30px;
-                    margin: 30px 15px;
-                    font-size: 2.0rem;
-                    text-transform: capitalize;
-                    font-weight: bold;
-                    display: block;
-
-                    span {
-                        transition: transform 0.2s ease;
-                    }
-
-                    .border {
-                        width: 0px;
-                        margin: auto;
-                        transition: width 0.2s ease;
-                    }
-
-                    &:focus {text-decoration: none;}
-                    &:hover, &:active, &.selected {
-                        text-decoration: none;
-                        span {
-                            display: block;
-                            transform: translateY(-10px);
-                        }
-
-                        .border {
-                            visibility: visible;
-                            width: 100%;
-                            border: 2px solid $textPrimaryColor;
-                        }
-                    }
-                }
-            }
-        }
-
-        h1 {
-            display: table-cell;
-            vertical-align: middle;
-            text-align: center;
-        }
-    }
-
-    main {
-        #about-me {
-            background: url('../assets/woodix-casse-tetes-en-bois.jpg');
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-
-            height: 540px;
-            width: 100%;
-
-            .center {
-                background: rgba(255, 255, 255, 0.65);
-                height: 100%;
-
-                aside {
-                    float: right;
-                    width: 40%;
-
-                    color: $darkPrimaryColor;
-                    a {
-                        color: $darkPrimaryColor;
-                    }
-                }
-
-                .philo {
-                    opacity: 0;
-                    transform: translateY(250px);
-                    transition: all 0.8s ease;
-                    display: table;
-                    height: 100%;
-                    text-align: center;
-                    div {
-                        display: table-cell;
-                        vertical-align: middle;
-
-                    }
-                }
-            }
-
-            h2 {
-                margin-top: 0;
-            }
-        }
-
-        .cv {
-            background: $darkPrimaryColor;
-            width: 100%;
-            color: $textPrimaryColor;
-            text-align: center;
-            padding-top: 30px;
-            overflow: hidden;
-
-            .content {
-                height: 150px;
-                vertical-align: middle;
-                width: 100%;
-                display: table;
-
-                .center {
-                    display: table-cell;
-                    vertical-align: middle;
-                }
-            }
-
-            a {
-                display: inline-block;
-                width: 100%;
-                border: 3px solid $textPrimaryColor;
-                color: $textPrimaryColor;
-                padding: 10px 35px;
-                border-radius: 5px;
-                font-size: 2.0rem;
-                margin: 10px;
-                transition: all 0.3s ease;
-
-                &:hover, &:active, &:focus {
-                    text-decoration: none;
-                    background: $textPrimaryColor;
-                    color: $darkPrimaryColor;
-
-                }
-            }
-
-            .contacts a {
-                width: 100%;
-            }
-        }
-    }
-
-    footer {
-        background-color: $darkPrimaryColor;
-        width: 100%;
-        height: 50px;
-        padding-top: 100px;
-        color: $textPrimaryColor;
-        display: table;
-
-        p {
-            display: table-cell;
-            text-align: right;
-            vertical-align: middle;
-            padding: 10px;
-        }
-    }
-
-    #logo-scroll{
-        opacity: 0;
-        position:fixed;
-        bottom: 5%;
-        right: 3%;
-        transition: all 0.4s ease;
-        box-shadow: 1px 1px 1px $secondaryTextColor;
-        border-radius: 50200px;
-    }
 }
 
 

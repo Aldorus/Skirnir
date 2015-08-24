@@ -1,0 +1,129 @@
+@import "values";
+
+$bottom: 150px;
+$skillWidth: 6%;
+
+#skills {
+    height: 100%;
+    background-image: linear-gradient(to bottom, $colorSkills 0%, $colorSkills 100%), url('../assets/pier-407252_1280.jpg');
+    @media screen and (max-width: $smallBreak) {
+        display: none;
+    }
+    position: relative;
+
+    .chart {
+        position: absolute;
+        top: 220px;
+        left: 25%;
+        bottom: $bottom;
+        right: 40px;
+        z-index: 1;
+
+        &:not(.viewed) .chart-element .fill{
+            height: 0% !important;
+            transition: all 0.8s ease;
+        }
+
+        .chart-element {
+            float: left;
+            margin: 0 0.3%;
+            height: 100%;
+            position: relative;
+            width: $skillWidth;
+
+            .fill {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                transition: all 0.5s ease;
+                border-radius: 5px 5px 0 0;
+
+            }
+            .text {
+                transform: rotate(-90deg);
+                transform-origin: 50%;
+                width: 100%;
+                position: absolute;
+                bottom: 10%;
+                text-align: left;
+                font-size: 2.8vmin;
+                color: white;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    .grid {
+        position: absolute;
+        top: 220px;
+        left: 40px;
+        bottom: $bottom;
+        right: 40px;
+        z-index: 0;
+
+        div {
+            position: absolute;
+            border-top: 1px solid white;
+            width: 100%;
+            color: white;
+            @media screen and (max-width: $smallBreak) {
+                border-color: #0090FF;
+                color: #0090FF;
+            }
+        }
+        .awesome {
+            top: 0%;
+        }
+        .excellent {
+            top: 20%;
+        }
+        .great {
+            top: 40%;
+        }
+        .not-bad {
+            top: 60%;
+        }
+        .very-sad {
+            top: 80%;
+        }
+        .none {
+            top: 100%;
+        }
+    }
+
+    .category {
+        @media screen and (max-width: $mediumBreak) {
+            visibility: hidden;
+        }
+
+        position: absolute;
+        bottom: 90px;
+        left: 25%;
+        right: 40px;
+        color: white;
+        font-size: 3.5vmin;
+
+        div {
+            float: left;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .front {
+            width: 33%;
+            color: #0090FF;
+
+        }
+        .mobile {
+            width: 20%;
+            color: #0CE87D;
+        }
+        .backend {
+            width: 13%;
+            color: #E8B800;
+        }
+        .lead {
+            width: 27%;
+            color: #FF6D0D;
+        }
+    }
+}

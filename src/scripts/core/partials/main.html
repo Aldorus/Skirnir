@@ -1,92 +1,16 @@
-<div class="container">
-    <header id="top">
-        <ul>
-            <li><a smooth-scroll id="home-link" target="top" href="" class="selected"><span>{{i18n.home}}</span>
-
-                <div class="border"></div>
-            </a></li>
-            <li><a smooth-scroll id="about-me-link" target="about-me" href=""><span>{{i18n.about_me}}</span>
-
-                <div class="border"></div>
-            </a></li>
-            <li><a smooth-scroll id="cv-link" target="cv" href=""><span>{{i18n.resume}}</span>
-
-                <div class="border"></div>
-            </a></li>
-        </ul>
-        <h1>
-            {{i18n.name}}<br/>
-            {{i18n.title}}
-            <br/>
-            <a class="arrow-down" smooth-scroll target="about-me" href="">
-                <img src="assets/1769.png">
-            </a>
-        </h1>
+<div class="container full-screen" id="top">
+    <header>
+        <glue-menu
+                selected-elements="selectedElements">
+        </glue-menu>
     </header>
-    <main>
-        <div id="about-me">
-            <div class="center">
-                <div class="philo col-md-6 col-md-offset-3">
-                    <div>
-                        <h2 id="about-link">{{i18n.philosophie}}</h2>
-                        <p>{{i18n.philo_text}}</p>
 
-                        <a class="arrow-down" smooth-scroll target="cv" href="">
-                            <img src="assets/1769.png">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="cv">
-            <div class="col-md-5 resume" id="cv">
-                <h2>{{i18n.look_resume}}</h2>
-
-                <div class="content col-sm-12">
-                    <div class="center">
-                        <!--<a href="">{{i18n.en_lang}}</a>-->
-                        <a href="assets/GUILLAUME_ROUSSEL_CV.pdf" target="_blank">{{i18n.fr_lang}}</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="center col-md-7 contacts">
-                <h2>You can contact me</h2>
-                <div class="content">
-                    <div class="center">
-                        <div class="col-sm-6">
-                            <a href="http://fr.linkedin.com/pub/guillaume-roussel/3b/351/b7b">
-                                <span>Linkedin</span>
-                            </a>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <a href="https://twitter.com/#!/RG_exod">
-                                <span>Twitter</span>
-                            </a>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <a href="http://www.facebook.com/people/Guillaume-Roussel/1185898373">
-                                <span>Facebook</span>
-                            </a>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <a href="https://plus.google.com/u/0/111719416459197719190/posts">
-                                <span>Google +</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <p>2015 &copy; Guillaume Roussel. Tous droits réservés.</p>
-    </footer>
-
-    <div id="logo-scroll">
-        <a smooth-scroll target="top" href=""><img src="assets/1769.png"/></a>
-    </div>
+    <section class="full-screen">
+        <home-screen></home-screen>
+        <!--<projects-->
+                <!--projects="githubProjects"></projects>-->
+        <skills></skills>
+        <contact></contact>
+    </section>
 </div>
+

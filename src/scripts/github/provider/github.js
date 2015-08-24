@@ -9,6 +9,12 @@ module.exports = function () {
     };
 
     provider.$get = function() {
+        var service = {};
+
+        service.getConfig = function() {
+            return provider.config;
+        };
+        return service;
     };
 
     return provider;

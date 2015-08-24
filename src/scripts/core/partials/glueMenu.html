@@ -1,0 +1,11 @@
+<nav class="glue-menu" id="glue-menu">
+    <h1 ng-class="{'show':model.currentSelected!==0}" class="menu-{{model.currentSelected}}">{{selectedElements[model.currentSelected].label}}</h1>
+
+    <ul>
+        <li class="menu-top" ng-class="{'selected': $index===model.currentSelected}"
+            ng-repeat="selectedElement in selectedElements track by $index">
+            <a href="#" scroll-to="{{selectedElement.link}}">{{selectedElement.label}}</a>
+        </li>
+    </ul>
+
+</nav>

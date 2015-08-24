@@ -1,0 +1,87 @@
+@import "values";
+
+.glue-menu {
+    @media screen and (max-width: $smallBreak) {
+        display: none;
+    }
+
+    h1 {
+        position: absolute;
+        color: white;
+        z-index: 99999;
+        font-size: 6vmin;
+        top: 35px;
+        left: 40px;
+        opacity: 0;
+        transition: all 0.3s ease;
+
+        &.show {
+            opacity: 1;
+        }
+        &.menu-1 {
+//            color: $colorProjectsMenu;
+            color: $colorSkillsMenu;
+        }
+        &.menu-2 {
+//            color: $colorSkillsMenu;
+            color: $colorContactsMenu;
+        }
+        &.menu-3 {
+//            color: $colorContactsMenu;
+        }
+    }
+
+    position: absolute;
+    bottom: 0;
+    z-index: 1000;
+    height: $menuHeight;
+    background-color: $colorMenu;
+    width: 100%;
+    text-align: right;
+    transition: all 0.2s ease;
+
+    &.fixed {
+        position: fixed;
+        top: 0;
+    }
+
+    li {
+        display: inline-block;
+        height: 100%;
+        font-size: 1.5rem;
+        margin-left: 40px;
+        margin-right: 40px;
+        position: relative;
+
+        a {
+            display: inline-block;
+            height: 100%;
+            padding: 50px 0;
+            color: white;
+            text-decoration: none;
+            position: relative;
+            top: 0px;
+            transition: all 0.2s ease;
+
+            &::after {
+                position: absolute;
+                bottom: 40px;
+                left: 50%;
+                content: "";
+                width: 0%;
+                transition: all 0.2s ease;
+            }
+        }
+
+        &:hover a, &.selected a {
+            top: -10px;
+
+            &::after {
+                border-bottom: 1px solid white;
+                width: 100%;
+                left: 0%;
+            }
+        }
+
+    }
+}

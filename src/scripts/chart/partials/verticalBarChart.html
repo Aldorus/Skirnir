@@ -1,0 +1,15 @@
+<div class="chart" id="chart">
+    <div ng-repeat="d in data" class="chart-element" style="width: {{(d.width)}}">
+
+        <div class="fill"
+             style="background-color: {{d.fill}}; color: {{d.text}}; height: {{d.value}}%">
+
+
+        </div>
+        <div class="text">
+            <span class="name">{{d.label}}</span>
+            <span class="value" ng-if="d.labelValue">{{d.labelValue}}</span>
+            <span class="value" ng-if="!d.labelValue && !d.hideValue">{{d.value}}%</span>
+        </div>
+    </div>
+</div>

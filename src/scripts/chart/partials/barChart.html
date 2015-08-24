@@ -1,0 +1,7 @@
+<div ng-repeat="d in data" class="chart-element" style="width: {{(d.value)}}%;">
+    <div class="fill"
+         style="background-color: {{d.fill}}; color: {{d.text}}">
+        <span class="name">{{d.label}}</span>
+        <span class="value">{{d.value}}%</span>
+    </div>
+</div>

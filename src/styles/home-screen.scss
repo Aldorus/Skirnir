@@ -1,0 +1,64 @@
+@import "values";
+
+.about-me {
+    background-image: url('../assets/1417903_25055855.jpg');
+    @media screen and (max-width: $smallBreak) {
+        background-image: linear-gradient(to bottom, $colorHome 0%, $colorHome 100%);
+    }
+    overflow: hidden;
+    color: white;
+    padding: 0;
+
+    h1 {
+        padding-top: 0px;
+    }
+
+    .content {
+        width: 40%;
+        margin: 0 5%;
+        padding: 5% 5% 3% 5%;
+        background: $colorHome;
+
+        @media screen and (max-width: $smallBreak) {
+            width: 92%;
+            margin: 10% 4%;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 7vmin;
+        }
+
+        h2 {
+            font-size: 4vmin;
+        }
+
+        span {
+            font-size: 3vmin;
+            text-align: justify;
+
+        }
+
+        .button {
+            text-align: right;
+        }
+        button {
+            font-size: 3vmin;
+            appearance: none;
+            border: 1px solid white;
+            color: white;
+            box-shadow: none;
+            background: none;
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+
+            &:hover {
+                background: white;
+                color: $colorHome;
+            }
+        }
+    }
+
+}
